@@ -4,8 +4,7 @@ import '../styles/Cart.css'
 function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(true)
 	const total = cart.reduce(
-		(acc, plantType) => acc + plantType.amount * plantType.price,
-		0
+		(acc, plantType) => acc + plantType.amount * plantType.price, 0
 	)
 	useEffect(() => {
 		document.title = `LMJ: ${total}€ d'achats`
@@ -25,7 +24,7 @@ function Cart({ cart, updateCart }) {
 					<ul>
 						{cart.map(({ name, price, amount }, index) => (
 							<div key={`${name}-${index}`}>
-								{name} {price}€ x {amount}
+								{name} {price}dt x {amount}
 							</div>
 						))}
 					</ul>
